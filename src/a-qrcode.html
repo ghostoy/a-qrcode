@@ -1,0 +1,30 @@
+<polymer-element name="a-qrcode"
+		 attributes="code width height">
+
+	<template>
+		<div id="qr"></div>
+	</template>
+
+	<script>
+		Polymer('a-qrcode', {
+			code: '',
+			width: 128,
+			height: 128,
+			ready: function() {
+				this.qrcode = new QRCode(this.$.qr, {
+				    text: this.code,
+				    width: this.width,
+				    height: this.height,
+				    colorDark : "#000000",
+				    colorLight : "#ffffff",
+				    correctLevel : QRCode.CorrectLevel.H
+				});
+			},
+			codeChanged: function() {
+				this.qrcode.clear();
+				this.qrcode.makeCode(this.code);
+			}
+		});
+	</script>
+
+</polymer-element>

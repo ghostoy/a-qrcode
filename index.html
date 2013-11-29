@@ -2,18 +2,29 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>&lt;my-element&gt;</title>
+	<title>&lt;a-qrcode&gt;</title>
 
 	<!-- Importing Web Component's Polyfill -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20130711/polymer.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20131107/polymer.min.js"></script>
+	<script src="src/qrcode.min.js" type="text/javascript"></script>
 
 	<!-- Importing Custom Elements -->
-	<link rel="import" href="src/my-element.html">
+	<link rel="import" href="src/a-qrcode.html">
 </head>
 <body>
 
 	<!-- Using Custom Elements -->
-	<my-element></my-element>
+	<form onsubmit="return generateQRCode();">
+		<input id="url" name="url" value="http://www.google.com"/>
+		<input type="submit" value="generate"/>
+	</form>
+	<a-qrcode id="qrcode" width="360" height="360" code="http://www.google.com"></a-qrcode>
+	<script>
+	function generateQRCode() {
+		document.getElementById('qrcode').code = document.getElementById('url').value;
+		return false;
+	}
+	</script>
 
 </body>
 </html>

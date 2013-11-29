@@ -1,40 +1,40 @@
-# &lt;my-element&gt;
+# &lt;a-qrcode&gt;
 
-TODO: Write a project description
+A QRCode generator based on Polymer and [davidshimjs/qrcodejs](https://github.com/davidshimjs/qrcodejs) library
 
-> Maintained by [Your Name](https://github.com/yourname).
+> Maintained by [Cong Liu](https://github.com/ghostoy).
 
 ## Demo
 
-> [Check it live](http://customelements.github.io/boilerplate-element).
+> [Check it live](http://ghostoy.github.io/a-qrcode).
 
 ## Usage
 
 1. Import Web Components' polyfill:
 
 	```html
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20130711/polymer.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20131107/polymer.min.js"></script>
 	```
 
 2. Import Custom Element:
 
 	```html
-	<link rel="import" href="src/my-element.html">
+	<link rel="import" href="src/a-qrcode.html">
 	```
 
 3. Start using it!
 
 	```html
-	<my-element></my-element>
+	<a-qrcode code="Fill your code"></a-qrcode>
 	```
 
 ## Options
 
 Attribute  | Options                   | Default             | Description
 ---        | ---                       | ---                 | ---
-`foo`      | *string*                  | `bar`               | Lorem ipsum
-`bar`      | `abc`, `def`, `ghi` 	   | `foo`               | Lorem ipsum
-`height`   | *int*                     | `100`               | Lorem ipsum
+`code`     | *string*                  | `""`                | The code to be displayed as QRCode
+`width`    | *int* 	   				   | `128`               | Width of the QRCode
+`height`   | *int*                     | `128`               | Height of the QRCode
 
 
 ## Contributing
@@ -47,7 +47,7 @@ Attribute  | Options                   | Default             | Description
 
 ## History
 
-* v0.0.1 August 19, 2013
+* v0.0.1 Nov 29, 2013
 	* Started project using [boilerplate-element](https://github.com/customelements/boilerplate-element)
 
 ## License
